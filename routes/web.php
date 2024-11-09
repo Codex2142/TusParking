@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\kendaraanController;
 use App\Http\Controllers\loginController;
+use App\Http\Controllers\ParkiranController;
 use App\Http\Controllers\petugasController;
 use App\Models\kendaraan;
 use App\Models\petugas;
@@ -42,3 +43,13 @@ Route::post('tambah-kendaraan', [kendaraanController::class, 'savecreate'])->nam
 Route::get('edit-kendaraan/{nim}', [kendaraanController::class, 'loadedit']);
 Route::post('edit-kendaraan', [kendaraanController::class, 'saveedit'])->name('saveedit');
 
+
+
+//MASUK -------------------------------------------------------------------------------
+
+// Route untuk menampilkan halaman masuk
+Route::get('/masuk', function () {
+    return view('masuk.masuk');
+});
+
+Route::post('/masuk', [ParkiranController::class, 'verifikasi'])->name('verifikasi');

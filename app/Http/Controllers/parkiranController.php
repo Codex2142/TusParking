@@ -19,14 +19,16 @@ class ParkiranController extends Controller
 
         // Memastikan data kendaraan dan petugas ditemukan
         if (!$kendaraan || !$petugas) {
-            return response()->json(['error' => 'Data kendaraan atau petugas tidak ditemukan'], 404);
+            session()->flash('fail', 'Data kendaraan atau petugas tidak ditemukan');
+            return redirect('/masuk');
         }
 
         // Verifikasi lebih lanjut jika diperlukan
         // Misalnya, periksa apakah kendaraan sudah terparkir sebelumnya
         $parkirExist = Parkiran::where('plat', $kendaraan->plat)->first();
         if ($parkirExist) {
-            return response()->json(['error' => 'Kendaraan sudah terparkir'], 400);
+            session()->flash('fail', 'Kendaraan sudah terparkir');
+            return redirect('/masuk');
         }
 
         // Insert data ke tabel parkiran
@@ -37,6 +39,8 @@ class ParkiranController extends Controller
             'waktu_masuk' => now(), // Menambahkan waktu masuk (sekarang)
         ]);
 
-        return response()->json(['message' => 'Kendaraan berhasil terparkir'], 200);
+        session()->flash('success', 'Kendaraan berhasil terparkir');
+        return redirect('/masuk');
     }
 }
+

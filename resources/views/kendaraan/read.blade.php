@@ -21,11 +21,17 @@
                 @if(Session::has('fail'))
                     <div class="alert alert-danger">{{ Session::get('fail') }}</div>
                 @endif
-                <table class="table table-bordered table-striped">
+
+                <!-- Form Pencarian -->
+                <div class="mb-3 d-flex">
+                    <input type="text" id="searchInput" class="form-control me-2" placeholder="Cari Nomor Induk atau Plat" onkeyup="searchTable()">
+                </div>
+
+                <table class="table table-bordered table-striped" id="kendaraanTable">
                     <thead class="table-dark">
                         <tr>
                             <th>No.</th>
-                            <th>plat</th>
+                            <th>Plat</th>
                             <th>Nomor Induk</th>
                             <th>Nama Lengkap</th>
                             <th>Kategori</th>
@@ -57,5 +63,6 @@
             </div>
         </div>
     </div>
+    <script src="{{ asset('script/daftar-kendaraan.js') }}"></script>
 </body>
 </html>

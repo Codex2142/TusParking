@@ -19,12 +19,13 @@ class petugasController extends Controller
 
     public function savecreate(Request $request){
         $request->validate([
-            'nip' => 'required|integer|min:5',
+            'nip' => 'required|integer|digits:5',
             'nama' => 'required|string',
-            'jeniskelamin'=>'required',
-            'username'=>'required',
-            'password'=>'required',
+            'jeniskelamin' => 'required',
+            'username' => 'required',
+            'password' => 'required',
         ]);
+
         try{
             $add = new petugas;
             $add->nip = $request->nip;
@@ -56,12 +57,13 @@ class petugasController extends Controller
 
     public function saveedit(Request $request){
         $request->validate([
-            'nip' => 'required|integer|min:5',
+            'nip' => 'required|integer|digits:5',
             'nama' => 'required|string',
-            'jeniskelamin'=>'required',
-            'username'=>'required',
-            'password'=>'required',
+            'jeniskelamin' => 'required',
+            'username' => 'required',
+            'password' => 'required',
         ]);
+
         try{
             $update = petugas::where('nip',$request->nip)->update([
                 'nip'=> $request->nip,
