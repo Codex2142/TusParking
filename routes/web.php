@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\kendaraanController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\ParkiranController;
@@ -66,3 +67,9 @@ Route::get('/keluar', [parkiranController::class, 'read']);
 //UPDATE & DELETE
 Route::get('/keluar-validasi/{id}', [parkiranController::class, 'loadedit']);
 Route::post('/keluar-validasi', [riwayatController::class, 'create'])->name('create');
+
+
+//DASHBOARD------------------------------------------------------------------------------------------
+
+//READ
+Route::get('/', [dashboardController::class, 'read']);
