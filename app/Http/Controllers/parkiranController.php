@@ -9,6 +9,18 @@ use Illuminate\Http\Request;
 
 class ParkiranController extends Controller
 {
+
+    public function read(){
+        $read = parkiran::all();
+        return view('keluar.keluar', compact('read'));
+    }
+
+    public function loadedit($id){
+        $edit = parkiran::find($id);
+        return view('keluar.keluar-validasi', compact('edit'));
+    }
+
+
     public function verifikasi(Request $request)
     {
         // Mengambil data kendaraan berdasarkan plat

@@ -4,6 +4,7 @@ use App\Http\Controllers\kendaraanController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\ParkiranController;
 use App\Http\Controllers\petugasController;
+use App\Http\Controllers\riwayatController;
 use App\Models\kendaraan;
 use App\Models\petugas;
 use Illuminate\Support\Facades\Route;
@@ -47,9 +48,21 @@ Route::post('edit-kendaraan', [kendaraanController::class, 'saveedit'])->name('s
 
 //MASUK -------------------------------------------------------------------------------
 
-// Route untuk menampilkan halaman masuk
+// READ
 Route::get('/masuk', function () {
     return view('masuk.masuk');
 });
 
+
+// CREATE
 Route::post('/masuk', [ParkiranController::class, 'verifikasi'])->name('verifikasi');
+
+
+//KELUAR-------------------------------------------------------------------------------------------
+
+//READ
+Route::get('/keluar', [parkiranController::class, 'read']);
+
+//UPDATE & DELETE
+Route::get('/keluar-validasi/{id}', [parkiranController::class, 'loadedit']);
+Route::post('/keluar-validasi', [riwayatController::class, 'create'])->name('create');
