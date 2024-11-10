@@ -16,7 +16,7 @@
                 <span class="p-2 alert alert-danger">{{ Session::get('fail') }}</span>
             @endif
             <div class="card-body">
-                <form action="{{ route('savecreate') }}" method="post">
+                <form action="{{ route('savecreate1') }}" method="post">
                     @csrf
                     {{-- NIP --}}
                     <div class="mb-3">

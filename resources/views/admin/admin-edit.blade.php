@@ -17,7 +17,7 @@
 
             @endif
             <div class="card-body">
-                <form action="{{ route('saveedit') }}" method="post">
+                <form action="{{ route('saveedit1') }}" method="post">
                     @csrf
                     {{-- NIP --}}
                     <div class="mb-3">

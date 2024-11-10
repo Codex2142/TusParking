@@ -18,7 +18,7 @@ class petugasController extends Controller
         return view('admin.admin-add');
     }
 
-    public function savecreate(Request $request){
+    public function savecreate1(Request $request){
         $request->validate([
             'nip' => 'required|integer|digits:5',
             'nama' => 'required|string',
@@ -44,7 +44,7 @@ class petugasController extends Controller
 
             return redirect('admin-dashboard')->with('success', 'user telah ditambahkan');
         }catch(\Exception $e){
-            return redirect()->back()->with('fail', $e->getMessage());
+            return redirect('admin-dashboard')->back()->with('fail', $e->getMessage());
         }
     }
 
@@ -63,7 +63,7 @@ class petugasController extends Controller
         return view('admin.admin-edit', compact('edit'));
     }
 
-    public function saveedit(Request $request){
+    public function saveedit1(Request $request){
         $request->validate([
             'nip' => 'required|integer|digits:5',
             'nama' => 'required|string',
