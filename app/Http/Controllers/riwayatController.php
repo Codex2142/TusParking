@@ -9,6 +9,12 @@ use Carbon\Carbon;
 
 class RiwayatController extends Controller
 {
+    public function read(){
+        $read = riwayat::all();
+        return view('riwayat.riwayat', compact('read'));
+    }
+
+
     public function create(Request $request)
     {
         // Validasi input

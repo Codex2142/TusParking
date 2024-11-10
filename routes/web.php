@@ -73,3 +73,9 @@ Route::post('/keluar-validasi', [riwayatController::class, 'create'])->name('cre
 
 //READ
 Route::get('/', [dashboardController::class, 'read']);
+
+
+//RIWAYAT -------------------------------------------------------------------------------------------
+
+//READ
+Route::get('riwayat', [riwayatController::class , 'read']);

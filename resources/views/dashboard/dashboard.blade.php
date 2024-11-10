@@ -65,7 +65,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="/daftar-kendaran">
+                <a href="/daftar-kendaraan">
                     <div class="card" style="width: 250px; height: 250px;">
                         <div class="card-body d-flex justify-content-center align-items-center">
                             <h4>KENDARAN</h4>
