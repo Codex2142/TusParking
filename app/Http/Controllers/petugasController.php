@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\petugas;
+use App\models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -35,6 +36,12 @@ class petugasController extends Controller
             $add->password = Hash::make($request->password);
             $add->save();
 
+            $add = new User;
+            $add->nip = $request->nip;
+            $add->username = $request->username;
+            $add->password = Hash::make($request->password);
+            $add->save();
+
             return redirect('admin-dashboard')->with('success', 'user telah ditambahkan');
         }catch(\Exception $e){
             return redirect()->back()->with('fail', $e->getMessage());
@@ -43,6 +50,7 @@ class petugasController extends Controller
 
     public function delete($nip){
         try{
+            user::where('nip', $nip)->delete();
             petugas::where('nip', $nip)->delete();
             return redirect('/admin-dashboard')->with('success', 'Berhasil Dihapus');
         }catch(\Exception $e){
@@ -69,6 +77,12 @@ class petugasController extends Controller
                 'nip'=> $request->nip,
                 'nama'=> $request->nama,
                 'jeniskelamin'=> $request->jeniskelamin,
+                'username'=> $request->username,
+                'password'=> Hash::make($request->password),
+            ]);
+
+            $update = user::where('nip',$request->nip)->update([
+                'nip'=> $request->nip,
                 'username'=> $request->username,
                 'password'=> Hash::make($request->password),
             ]);

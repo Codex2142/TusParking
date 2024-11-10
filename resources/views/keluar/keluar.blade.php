@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
 </head>
 <body>
+    @include('layout.header')
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-md-10">

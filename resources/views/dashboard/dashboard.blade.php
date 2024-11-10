@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
+    @include('layout.header')
     <div class="container mt-6">
         <div class="d-flex">
             <!-- Aside for Parking Table -->
@@ -82,5 +83,6 @@
             </div>
         </div>
     </div>
+    @include('layout.footer')
 </body>
 </html>

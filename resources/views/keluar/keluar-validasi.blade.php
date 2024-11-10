@@ -9,6 +9,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+    @include('layout.header')
     <div class="container mt-5">
         <h1 class="mb-4">Form Keluar</h1>
         <form action="{{ route('create') }}" method="post">

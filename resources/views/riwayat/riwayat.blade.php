@@ -9,6 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 </head>
 <body>
+    @include('layout.header')
     <div class="container mt-5">
         <aside class="mr-3" style="flex: 1;">
             <div class="card">

@@ -2,12 +2,9 @@
 
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\kendaraanController;
-use App\Http\Controllers\loginController;
 use App\Http\Controllers\ParkiranController;
 use App\Http\Controllers\petugasController;
 use App\Http\Controllers\riwayatController;
-use App\Models\kendaraan;
-use App\Models\petugas;
 use Illuminate\Support\Facades\Route;
 
 //ADMIN --------------------------------------------------------------------------

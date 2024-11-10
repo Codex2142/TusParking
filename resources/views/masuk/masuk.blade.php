@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
 </head>
 <body>
+    @include('layout.header')
     <div class="container my-4">
         <div class="card">
             <div class="card-header">

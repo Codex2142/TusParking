@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/yearpicker/1.1.0/yearpicker.css" />
 </head>
 <body>
+    @include('layout.header')
     <div class="container">
         <div class="card">
             <div class="card-header">Edit Kendaraan </div>
