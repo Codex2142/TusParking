@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\kendaraanController;
+use App\Http\Controllers\loginController;
 use App\Http\Controllers\ParkiranController;
 use App\Http\Controllers\petugasController;
 use App\Http\Controllers\riwayatController;
@@ -76,3 +77,13 @@ Route::get('/', [dashboardController::class, 'read']);
 
 //READ
 Route::get('riwayat', [riwayatController::class , 'read']);
+
+
+
+//LOGIN ------------------------------------------------------------------------------------------
+
+Route::get('/login', function(){
+    return view('admin.admin-login');
+});
+
+Route::post('/login', [loginController::class, 'auth'])->name('auth');

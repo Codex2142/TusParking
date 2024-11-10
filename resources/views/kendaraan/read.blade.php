@@ -64,6 +64,7 @@
             </div>
         </div>
     </div>
+    @include('layout.footer')
     <script src="{{ asset('script/daftar-kendaraan.js') }}"></script>
 </body>
 </html>
