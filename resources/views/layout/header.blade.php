@@ -29,7 +29,7 @@
 
                     <!-- User Icon and Name -->
                     <li class="nav-item me-3 d-flex align-items-center">
-                        <span id="username" class="text-white fw-semibold">{{ auth()->user()->username }}</span>
+                        <span id="username" class="text-white fw-semibold">{{ auth()->user()->username }} | {{ auth()->user()->level }}</span>
                     </li>
 
 
