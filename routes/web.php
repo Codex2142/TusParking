@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\eksternalController;
 use App\Http\Controllers\kendaraanController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\ParkiranController;
 use App\Http\Controllers\petugasController;
+use App\Http\Controllers\registerController;
 use App\Http\Controllers\riwayatController;
 use Illuminate\Support\Facades\Route;
 
@@ -90,3 +92,13 @@ Route::post('/login', [loginController::class, 'auth'])->name('auth');
 
 // Proses Logout
 Route::post('/logout', [loginController::class, 'logout'])->name('logout')->middleware('auth');
+
+// REGISTER ---------------------------------------------------------------------------------------
+Route::get('/register', [registerController::class, 'register'])->middleware('guest');
+Route::post('/register', [registerController::class, 'createregis'])->name('createregis')->middleware('guest');
+
+//EKSTERNAL -------------------------------------------------------------------------------------
+
+Route::get('/pengecualian', [eksternalController::class, 'read'])->middleware('auth');
+Route::get('/tambahkan-pengunjung', [eksternalController::class, 'load'])->middleware('auth');
+Route::post('/tambahkan-pengunjung', [eksternalController::class, 'createfoto'])->name('createfoto')->middleware('auth');
