@@ -14,6 +14,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->string('level')->default('petugas');
             $table->bigInteger('nip');
             $table->string('username');
             $table->string('password');

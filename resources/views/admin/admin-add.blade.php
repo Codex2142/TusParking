@@ -27,6 +27,19 @@
                         @enderror
                     </div>
 
+                    {{-- Peran --}}
+                    <div class="mb-3">
+                        <label for="level" class="form-label">Peran</label>
+                        <select name="level" class="form-control" id="level">
+                            <option value="" disabled selected>Peran</option>
+                            <option value="admin" {{ old('level') == 'admin' ? 'selected' : '' }}>admin</option>
+                            <option value="petugas" {{ old('level') == 'petugas' ? 'selected' : '' }}>petugas</option>
+                        </select>
+                        @error('level')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+
                     {{-- NAMA --}}
                     <div class="mb-3">
                         <label for="formGroupExampleInput" class="form-label">Nama</label>

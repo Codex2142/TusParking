@@ -21,6 +21,7 @@ class petugasController extends Controller
     public function savecreate1(Request $request){
         $request->validate([
             'nip' => 'required|integer|digits:5',
+            'level'=> 'required',
             'nama' => 'required|string',
             'jeniskelamin' => 'required',
             'username' => 'required',
@@ -38,13 +39,14 @@ class petugasController extends Controller
 
             $add = new User;
             $add->nip = $request->nip;
+            $add->level = $request->level;
             $add->username = $request->username;
             $add->password = Hash::make($request->password);
             $add->save();
 
             return redirect('admin-dashboard')->with('success', 'user telah ditambahkan');
         }catch(\Exception $e){
-            return redirect('admin-dashboard')->back()->with('fail', $e->getMessage());
+            return redirect('admin-dashboard')->with('fail', $e->getMessage());
         }
     }
 
@@ -66,6 +68,7 @@ class petugasController extends Controller
     public function saveedit1(Request $request){
         $request->validate([
             'nip' => 'required|integer|digits:5',
+            'level'=> 'required',
             'nama' => 'required|string',
             'jeniskelamin' => 'required',
             'username' => 'required',
@@ -83,6 +86,7 @@ class petugasController extends Controller
 
             $update = user::where('nip',$request->nip)->update([
                 'nip'=> $request->nip,
+                'level' => $request->level,
                 'username'=> $request->username,
                 'password'=> Hash::make($request->password),
             ]);
