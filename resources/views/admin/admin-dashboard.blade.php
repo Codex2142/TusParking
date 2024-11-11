@@ -23,6 +23,7 @@
                 @if(Session::has('fail'))
                     <div class="alert alert-danger">{{ Session::get('fail') }}</div>
                 @endif
+                <input type="text" id="searchInput" class="mt-3 mb-3 form-control me-2" placeholder="Cari NIP atau Nama Lengkap" onkeyup="searchTable()">
                 <table class="table table-bordered table-striped">
                     <thead class="table-dark">
                         <tr>
@@ -60,5 +61,6 @@
         </div>
     </div>
     @include('layout.footer')
+    <script src="{{ asset('script/petugas.js') }}"></script>
 </body>
 </html>

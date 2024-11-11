@@ -30,6 +30,7 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
                         @endif
+                        <input type="text" id="searchInput" class="mt-3 form-control me-2" placeholder="Cari Nomor Induk atau Plat" onkeyup="searchTable()">
                         <table class="table mt-3 table-bordered table-striped">
                             <thead class="table-dark">
                                 <tr>
@@ -69,5 +70,6 @@
         </div>
     </div>
     @include('layout.footer')
+    <script src="{{ asset('script/keluar.js') }}"></script>
 </body>
 </html>

@@ -18,8 +18,8 @@
                     <h3 class="mb-0">SEDANG PARKIR</h3>
                 </div>
                 <div class="mb-3 d-flex">
-                    <input type="text" id="searchInput" class="form-control me-2" placeholder="Cari Nomor Induk atau Plat">
-                    <select id="monthFilter" class="ml-2 form-control">
+                    <input type="text" id="searchInput" class="mt-3 form-control me-2" placeholder="Cari Nomor Induk atau Plat">
+                    <select id="monthFilter" class="mt-3 ml-2 form-control">
                         <option value="">Pilih Bulan</option>
                         <option value="01">Januari</option>
                         <option value="02">Februari</option>
