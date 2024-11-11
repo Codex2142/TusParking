@@ -10,6 +10,7 @@
 </head>
 <body>
     @include('layout.header')
+    @include('layout.sidebar')
     <div class="container mt-5">
         <aside class="mr-3" style="flex: 1;">
             <div class="card">

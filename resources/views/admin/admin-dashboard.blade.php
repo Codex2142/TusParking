@@ -9,6 +9,7 @@
 </head>
 <body>
     @include('layout.header')
+    @include('layout.sidebar')
     <div class="container my-4">
         <div class="card">
             <div class="text-white card-header bg-primary">

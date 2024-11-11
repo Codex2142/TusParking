@@ -3,12 +3,12 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 @auth
-<body style="width: 100%; overflow: hidden;">
+
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="margin-bottom: 40px" >
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding: 10px;" >
         <div class="container-fluid">
             <!-- Logo -->
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/">
                 <img src="image/Logo.png" class="img-fluid" alt="Logo" style="max-width: 150px; margin-left: 20px;">
             </a>
 
@@ -33,16 +33,6 @@
                     </li>
 
 
-                    <!-- Dashboard Button -->
-                    @if (auth()->check() && auth()->user()->level == 'admin')
-                        <a href="/admin-dashboard">
-                            <li class="nav-item me-2">
-                                <button type="button" class="btn btn-outline-light">
-                                    <i class="bi bi-layout-text-sidebar-reverse"></i> Dashboard
-                                </button>
-                            </li>
-                        </a>
-                    @else
                         <a href="/">
                             <li class="nav-item me-2">
                                 <button type="button" class="btn btn-outline-light">
@@ -50,8 +40,6 @@
                                 </button>
                             </li>
                         </a>
-                    @endif
-
                     <!-- Logout Button -->
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf

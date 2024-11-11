@@ -1,0 +1,55 @@
+/* Style untuk container card */
+.card-custom {
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; /* Menghilangkan underline pada teks */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.card-custom:hover {
+    transform: scale(1.05); /* Membesarkan sedikit */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Grid 2x2 */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Membuat 2 kolom */
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Ukuran card */
+.card-custom h4 {
+    font-size: 1.5rem;
+}
+
+/* Gambar background untuk masing-masing card */
+.masuk {
+    background-image: url("https://via.placeholder.com/250x250?text=MASUK");
+}
+
+.keluar {
+    background-image: url("https://via.placeholder.com/250x250?text=KELUAR");
+}
+
+.kendaraan {
+    background-image: url("https://via.placeholder.com/250x250?text=KENDARAAN");
+}
+
+.riwayat {
+    background-image: url("https://via.placeholder.com/250x250?text=RIWAYAT");
+}
+
+/* Mengatur tampilan aside */
+aside {
+    flex: 1;
+    margin-right: 2rem;
+}

@@ -6,13 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dashboard</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('style.css/dashboard.css') }}">
 </head>
 <body>
     @include('layout.header')
-    <div class="container mt-6">
+    @include('layout.sidebar')
+
+    <div class="container mt-6" style="margin-top: 100px;">
         <div class="d-flex">
             <!-- Aside for Parking Table -->
-            <aside class="mr-3" style="flex: 1;">
+            <aside>
                 <div class="card">
                     <div class="text-white card-header bg-dark">
                         <h3 class="mb-0">SEDANG PARKIR</h3>
@@ -50,39 +53,24 @@
                 </div>
             </aside>
 
-            <!-- Additional 4 Cards in 2x2 Grid -->
-            <div class="flex-wrap d-flex" style="gap: 1rem;">
-                <a href="/masuk">
-                    <div class="card" style="width: 250px; height: 250px;">
-                        <div class="card-body d-flex justify-content-center align-items-center">
-                            <h4>MASUK</h4>
-                        </div>
-                    </div>
+            <!-- Cards in 2x2 Grid -->
+            <div class="card-grid">
+                <a href="/masuk" class="card-custom masuk">
+                    <h4>MASUK</h4>
                 </a>
-                <a href="/keluar">
-                    <div class="card" style="width: 250px; height: 250px;">
-                        <div class="card-body d-flex justify-content-center align-items-center">
-                            <h4>KELUAR</h4>
-                        </div>
-                    </div>
+                <a href="/keluar" class="card-custom keluar">
+                    <h4>KELUAR</h4>
                 </a>
-                <a href="/daftar-kendaraan">
-                    <div class="card" style="width: 250px; height: 250px;">
-                        <div class="card-body d-flex justify-content-center align-items-center">
-                            <h4>KENDARAN</h4>
-                        </div>
-                    </div>
+                <a href="/daftar-kendaraan" class="card-custom kendaraan">
+                    <h4>KENDARAAN</h4>
                 </a>
-                <a href="/riwayat">
-                    <div class="card" style="width: 250px; height: 250px;">
-                        <div class="card-body d-flex justify-content-center align-items-center">
-                            <h4>RIWAYAT</h4>
-                        </div>
-                    </div>
+                <a href="/riwayat" class="card-custom riwayat">
+                    <h4>RIWAYAT</h4>
                 </a>
             </div>
         </div>
     </div>
+
     @include('layout.footer')
 </body>
 </html>

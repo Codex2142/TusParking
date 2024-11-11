@@ -10,6 +10,7 @@
 </head>
 <body>
     @include('layout.header')
+    @include('layout.sidebar')
     <div class="container mt-5">
         <h1 class="mb-4">Form Keluar</h1>
         <form action="{{ route('create') }}" method="post">
@@ -20,7 +21,7 @@
             </div>
             <div class="form-group">
                 <label for="nipkeluar">NIP Keluar:</label>
-                <input type="text" class="form-control" name="nipkeluar" id="nipkeluar" value="{{ old('nipkeluar') }}" required>
+                <input type="text" class="form-control" name="nipkeluar" id="nipkeluar" value="{{ auth()->user()->nip }}" readonly>
             </div>
             <div class="form-group">
                 <label for="nimkeluar">NIM Keluar:</label>

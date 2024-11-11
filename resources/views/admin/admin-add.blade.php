@@ -9,6 +9,7 @@
 </head>
 <body>
     @include('layout.header')
+    @include('layout.sidebar')
     <div class="container">
         <div class="card">
             <div class="card-header">Tambahkan user Baru</div>

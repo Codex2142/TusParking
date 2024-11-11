@@ -9,6 +9,7 @@
 </head>
 <body>
     @include('layout.header')
+    @include('layout.sidebar')
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-md-10">
