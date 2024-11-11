@@ -16,11 +16,26 @@ class LoginController extends Controller
 
         if (Auth::attempt($cred)) {
             $request->session()->regenerate();
-            return redirect()->intended('admin-dashboard');
+
+            // Cek apakah level user adalah 'admin'
+            if (Auth::user()->level === 'admin') {
+                return redirect()->intended('admin-dashboard');
+            } else {
+                return redirect()->intended('/');
+            }
         }
 
         return back()->withErrors([
             'username' => 'Anda Belum Terdaftar!',
         ])->onlyInput('username');
+    }
+
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/login');
     }
 }

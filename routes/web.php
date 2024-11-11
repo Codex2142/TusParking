@@ -87,3 +87,8 @@ Route::get('/login', function(){
 });
 
 Route::post('/login', [loginController::class, 'auth'])->name('auth');
+
+
+//LOGOUT ========================================================================================
+
+Route::post('/logout', [loginController::class, 'logout'])->name('logout');

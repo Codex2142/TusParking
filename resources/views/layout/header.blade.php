@@ -2,14 +2,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
-
+@auth
 <body style="width: 100%; overflow: hidden;">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="margin-bottom: 40px" >
         <div class="container-fluid">
             <!-- Logo -->
             <a class="navbar-brand" href="#">
-                <img src="image/Logo.png" class="img-fluid" alt="Logo" style="max-width: 150px;">
+                <img src="image/Logo.png" class="img-fluid" alt="Logo" style="max-width: 150px; margin-left: 20px;">
             </a>
 
             <!-- Toggle button for mobile view -->
@@ -26,25 +26,40 @@
                         <span id="current-date" class="text-white"></span>
                     </li>
 
+
                     <!-- User Icon and Name -->
                     <li class="nav-item me-3 d-flex align-items-center">
-                        <span id="username" class="text-white fw-semibold">Nama Pengguna</span>
+                        <span id="username" class="text-white fw-semibold">{{ auth()->user()->username }}</span>
                     </li>
 
+
                     <!-- Dashboard Button -->
-                    <a href="/">
-                        <li class="nav-item me-2">
-                            <button type="button" class="btn btn-outline-light">
-                                <i class="bi bi-layout-text-sidebar-reverse"></i> Dashboard
-                            </button>
-                        </li>
-                    </a>
+                    @if (auth()->check() && auth()->user()->level == 'admin')
+                        <a href="/admin-dashboard">
+                            <li class="nav-item me-2">
+                                <button type="button" class="btn btn-outline-light">
+                                    <i class="bi bi-layout-text-sidebar-reverse"></i> Dashboard
+                                </button>
+                            </li>
+                        </a>
+                    @else
+                        <a href="/">
+                            <li class="nav-item me-2">
+                                <button type="button" class="btn btn-outline-light">
+                                    <i class="bi bi-layout-text-sidebar-reverse"></i> Dashboard
+                                </button>
+                            </li>
+                        </a>
+                    @endif
 
                     <!-- Logout Button -->
-                    <li class="nav-item">
-                        <button type="button" class="btn btn-danger">
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="submit" class="btn btn-danger">
                             <i class="bi bi-box-arrow-right"></i> Logout
                         </button>
+                    </form>
+                    <li class="nav-item">
                     </li>
                 </ul>
             </div>
@@ -62,5 +77,5 @@
     <script src="script.js"></script>
 
 </body>
-
+@endauth
 </html>

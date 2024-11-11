@@ -15,7 +15,7 @@
                 <div class="alert alert-danger">{{ Session::get('fail') }}</div>
             @endif
 
-            <form action="" method="POST">
+            <form action="{{ route('auth') }}" method="POST">
                 @csrf
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
