@@ -10,8 +10,8 @@
 <body>
     @include('layout.header')
     @include('layout.sidebar')
-    <div class="container my-4">
-        <div class="card">
+    <div class="container my-3">
+        <div class="card" style="margin-left: 100px;">
             <div class="text-white card-header bg-primary">
                 Anggota Satpam TUSParking
                 <a href="/admin-add" class="btn btn-light btn-sm float-end">+</a>
@@ -23,7 +23,7 @@
                 @if(Session::has('fail'))
                     <div class="alert alert-danger">{{ Session::get('fail') }}</div>
                 @endif
-                <input type="text" id="searchInput" class="mt-3 mb-3 form-control me-2" placeholder="Cari NIP atau Nama Lengkap" onkeyup="searchTable()">
+                <input type="text" id="searchInput" class="mt-3 mb-3 form-control me-2" placeholder="Cari NIP atau Nama Lengkap" onkeyup="searchTable()" autocomplete="off">
                 <table class="table table-bordered table-striped">
                     <thead class="table-dark">
                         <tr>

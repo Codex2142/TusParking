@@ -13,7 +13,7 @@
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-md-10">
-                <div class="shadow-lg card">
+                <div class="shadow-lg card" style="margin-left: 10px; padding-top: 70px;">
                     <div class="text-center text-white card-header bg-primary">
                         <h3>Daftar Kendaraan yang Sedang Parkir</h3>
                     </div>

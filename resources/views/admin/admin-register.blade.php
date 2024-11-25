@@ -21,7 +21,7 @@
                 {{-- NIP --}}
                 <div class="mb-3">
                     <label for="nip" class="form-label">NIP</label>
-                    <input type="text" name="nip" value="{{ old('nip') }}" class="form-control" id="nip" placeholder="Masukkan NIP">
+                    <input type="text" name="nip" value="{{ old('nip') }}" class="form-control" id="nip" placeholder="Masukkan NIP" autocomplete="off">
                     @error('nip')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -30,7 +30,7 @@
                 {{-- Nama --}}
                 <div class="mb-3">
                     <label for="nama" class="form-label">Nama</label>
-                    <input type="text" name="nama" value="{{ old('nama') }}" class="form-control" id="nama" placeholder="Masukkan Nama lengkap">
+                    <input type="text" name="nama" value="{{ old('nama') }}" class="form-control" id="nama" placeholder="Masukkan Nama lengkap" autocomplete="off">
                     @error('nama')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -52,7 +52,7 @@
                 {{-- Username --}}
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
-                    <input type="text" name="username" value="{{ old('username') }}" class="form-control" id="username" placeholder="Masukkan username">
+                    <input type="text" name="username" value="{{ old('username') }}" class="form-control" id="username" placeholder="Masukkan username" autocomplete="off">
                     @error('username')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -61,7 +61,7 @@
                 {{-- Password --}}
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" name="password" value="{{ old('password') }}" class="form-control" id="password" placeholder="Masukkan password">
+                    <input type="password" name="password" value="{{ old('password') }}" class="form-control" id="password" placeholder="Masukkan password" autocomplete="off">
                     @error('password')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror

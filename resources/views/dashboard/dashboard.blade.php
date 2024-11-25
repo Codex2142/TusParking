@@ -7,16 +7,26 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('style.css/dashboard.css') }}">
+    <style>
+    .zoom-hover {
+        transition: transform 0.3s ease; /* Transisi saat hover */
+    }
+
+    .zoom-hover:hover {
+        transform: scale(1.1); /* Zoom sedikit saat hover */
+    }
+</style>
+
 </head>
 <body>
     @include('layout.header')
     @include('layout.sidebar')
 
-    <div class="container mt-6" style="margin-top: 100px;">
+    <div class="container mt-6" style="margin-top: 0px;">
         <div class="d-flex">
             <!-- Aside for Parking Table -->
             <aside>
-                <div class="card">
+                <div class="card" style="margin-left: 100px">
                     <div class="text-white card-header bg-dark">
                         <h3 class="mb-0">SEDANG PARKIR</h3>
                     </div>
@@ -54,22 +64,24 @@
             </aside>
 
             <!-- Cards in 2x2 Grid -->
-            <div class="card-grid">
-                <a href="/masuk" class="card-custom masuk">
-                    <h4>MASUK</h4>
-                </a>
-                <a href="/keluar" class="card-custom keluar">
-                    <h4>KELUAR</h4>
-                </a>
-                <a href="/daftar-kendaraan" class="card-custom kendaraan">
-                    <h4>KENDARAAN</h4>
-                </a>
-                <a href="/riwayat" class="card-custom riwayat">
-                    <h4>RIWAYAT</h4>
-                </a>
-            </div>
+           <div class="card-grid">
+    <a href="/masuk" class="text-center">
+        <img src="image/MASUK.png" alt="Icon Masuk" class="shadow-sm img-fluid rounded-4 zoom-hover" style="width: 144px; height: 250px; border-radius: 15px;">
+    </a>
+    <a href="/keluar" class="text-center">
+        <img src="image/KELUAR.png" alt="Icon Keluar" class="shadow-sm img-fluid rounded-4 zoom-hover" style="width: 144px; height: 250px; border-radius: 15px;">
+    </a>
+    <a href="/daftar-kendaraan" class="text-center">
+        <img src="image/KENDARAAN.png" alt="Icon Kendaraan" class="shadow-sm img-fluid rounded-4 zoom-hover" style="width: 144px; height: 250px; border-radius: 15px;">
+    </a>
+    <a href="/riwayat" class="text-center">
+        <img src="image/RIWAYAT.png" alt="Icon Riwayat" class="shadow-sm img-fluid rounded-4 zoom-hover" style="width: 144px; height: 250px; border-radius: 15px;">
+    </a>
+</div>
+
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
     @include('layout.footer')
 </body>

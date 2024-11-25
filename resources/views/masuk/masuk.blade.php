@@ -10,8 +10,8 @@
 <body>
     @include('layout.header')
     @include('layout.sidebar')
-    <div class="container my-4">
-        <div class="card">
+    <div class="container my-5">
+        <div class="card" style="margin-left: 10px; padding-top: 30px;">
             <div class="card-header">
                 Kendaraan Masuk
             </div>
@@ -26,15 +26,15 @@
                     @csrf
                     <div class="mb-3">
                         <label for="nip" class="form-label">NIP Petugas</label>
-                        <input type="text" class="form-control" id="nip" name="nip" value="{{ auth()->user()->nip }}" readonly>
+                        <input type="text" class="form-control" id="nip" name="nip" value="{{ auth()->user()->nip }}" readonly autocomplete="off">
                     </div>
                     <div class="mb-3">
                         <label for="plat" class="form-label">Plat Nomor</label>
-                        <input type="text" class="form-control" id="plat" name="plat" placeholder="Masukkan Plat Nomor Kendaraan" required>
+                        <input type="text" class="form-control" id="plat" name="plat" placeholder="Masukkan Plat Nomor Kendaraan" required autocomplete="off">
                     </div>
                     <div class="mb-3">
                         <label for="nim" class="form-label">Nomor Induk</label>
-                        <input type="text" class="form-control" id="nim" name="nim" placeholder="Masukkan NIM" required>
+                        <input type="text" class="form-control" id="nim" name="nim" placeholder="Masukkan NIM" required autocomplete="off">
                     </div>
                     <button type="submit" class="btn btn-primary">Verifikasi</button>
                 </form>

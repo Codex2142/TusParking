@@ -1,15 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header TusParking</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+    <style>
+
+        /* Navbar fixed at the top */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: #343a40;
+        }
+    </style>
 </head>
-@auth
+
+<body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding: 10px;" >
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="position: fixed; padding: 10px;">
         <div class="container-fluid">
             <!-- Logo -->
             <a class="navbar-brand" href="/">
-                <img src="image/Logo.png" class="img-fluid" alt="Logo" style="max-width: 150px; margin-left: 20px;">
+                <img src="image/Logo.png" class="img-fluid" alt="Logo" style="max-width: 150px;">
             </a>
 
             <!-- Toggle button for mobile view -->
@@ -26,44 +48,39 @@
                         <span id="current-date" class="text-white"></span>
                     </li>
 
-
                     <!-- User Icon and Name -->
                     <li class="nav-item me-3 d-flex align-items-center">
-                        <span id="username" class="text-white fw-semibold">{{ auth()->user()->username }} | {{ auth()->user()->level }}</span>
+                        <span id="username" class="text-white fw-semibold">{{ Auth::user()->username }}</span>
+                    </li>
+
+                    <!-- Dashboard Button -->
+                    <li class="nav-item me-2">
+                        <a href="/" class="btn btn-outline-light w-100 text-decoration-none">
+                        <i class="bi bi-layout-text-sidebar-reverse"></i> Dashboard
+                        </a>
                     </li>
 
 
-                        <a href="/">
-                            <li class="nav-item me-2">
-                                <button type="button" class="btn btn-outline-light">
-                                    <i class="bi bi-layout-text-sidebar-reverse"></i> Dashboard
-                                </button>
-                            </li>
-                        </a>
                     <!-- Logout Button -->
-                    <form action="{{ route('logout') }}" method="POST">
-                        @csrf
-                        <button type="submit" class="btn btn-danger">
-                            <i class="bi bi-box-arrow-right"></i> Logout
-                        </button>
-                    </form>
                     <li class="nav-item">
+                        <a href="/logout">
+                            <button type="button" class="btn btn-danger">
+                                <i class="bi bi-box-arrow-right"></i> Logout
+                            </button>
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
-    <!-- Custom JavaScript for Date -->
-    <script src="script.js"></script>
-
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
-@endauth
+
 </html>
+
+

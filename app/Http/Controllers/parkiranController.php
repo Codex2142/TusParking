@@ -48,11 +48,11 @@ class ParkiranController extends Controller
             'plat' => $kendaraan->plat,
             'nimmasuk' => $kendaraan->nim,
             'nipmasuk' => $petugas->nip,
-            'waktu_masuk' => now(), // Menambahkan waktu masuk (sekarang)
+            'waktu_masuk' => now(),
         ]);
 
         session()->flash('success', 'Kendaraan berhasil terparkir');
-        return redirect('/masuk');
+        return redirect('/keluar');
     }
 }
 

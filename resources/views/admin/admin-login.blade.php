@@ -40,6 +40,9 @@
 
                 <button type="submit" class="btn btn-primary w-100">Login</button>
             </form>
+
+            <!-- Link to Register -->
+            <p class="mt-3 text-center">Silahkan mendaftar jika belum memiliki akun? <a href="/register">Daftar</a></p>
         </div>
     </div>
 

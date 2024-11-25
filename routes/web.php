@@ -91,7 +91,7 @@ Route::post('/login', [loginController::class, 'auth'])->name('auth');
 // LOGOUT ========================================================================================
 
 // Proses Logout
-Route::post('/logout', [loginController::class, 'logout'])->name('logout')->middleware('auth');
+Route::get('/logout', [loginController::class, 'logout'])->name('logout')->middleware('auth');
 
 // REGISTER ---------------------------------------------------------------------------------------
 Route::get('/register', [registerController::class, 'register'])->middleware('guest');

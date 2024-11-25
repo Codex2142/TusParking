@@ -11,7 +11,7 @@
     @include('layout.header')
     @include('layout.sidebar')
     <div class="container">
-        <div class="card">
+        <div class="card" style="margin-left: 100px">
             <div class="card-header">Tambahkan user Baru</div>
             @if (Session::has('fail'))
                 <span class="p-2 alert alert-danger">{{ Session::get('fail') }}</span>
@@ -22,7 +22,7 @@
                     {{-- NIP --}}
                     <div class="mb-3">
                         <label for="formGroupExampleInput" class="form-label">NIP</label>
-                        <input type="text" name="nip" value="{{ old('nip') }}" class="form-control" id="formGroupExampleInput" placeholder="Masukkan NIP">
+                        <input type="text" name="nip" value="{{ old('nip') }}" class="form-control" id="formGroupExampleInput" placeholder="Masukkan NIP" autocomplete="off">
                         @error('nip')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
@@ -44,7 +44,7 @@
                     {{-- NAMA --}}
                     <div class="mb-3">
                         <label for="formGroupExampleInput" class="form-label">Nama</label>
-                        <input type="text" name="nama" value="{{ old('nama') }}" class="form-control" id="formGroupExampleInput" placeholder="Masukkan Nama lengkap">
+                        <input type="text" name="nama" value="{{ old('nama') }}" class="form-control" id="formGroupExampleInput" placeholder="Masukkan Nama lengkap" autocomplete="off">
                         @error('nama')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
@@ -67,7 +67,7 @@
                     {{-- Username --}}
                     <div class="mb-3">
                         <label for="formGroupExampleInput" class="form-label">Username</label>
-                        <input type="text" name="username" value="{{ old('username') }}" class="form-control" id="formGroupExampleInput" placeholder="Masukkan username">
+                        <input type="text" name="username" value="{{ old('username') }}" class="form-control" id="formGroupExampleInput" placeholder="Masukkan username" autocomplete="off">
                         @error('username')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror

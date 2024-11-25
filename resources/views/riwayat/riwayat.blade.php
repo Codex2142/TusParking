@@ -11,14 +11,14 @@
 <body>
     @include('layout.header')
     @include('layout.sidebar')
-    <div class="container mt-5">
+    <div class="container mt-3">
         <aside class="mr-3" style="flex: 1;">
-            <div class="card">
+            <div class="card" style="margin-left: 10px; padding-top: 70px">
                 <div class="text-white card-header bg-dark">
                     <h3 class="mb-0">SEDANG PARKIR</h3>
                 </div>
                 <div class="mb-3 d-flex">
-                    <input type="text" id="searchInput" class="mt-3 form-control me-2" placeholder="Cari Nomor Induk atau Plat">
+                    <input type="text" id="searchInput" class="mt-3 form-control me-2" placeholder="Cari Nomor Induk atau Plat" autocomplete="off"v>
                     <select id="monthFilter" class="mt-3 ml-2 form-control">
                         <option value="">Pilih Bulan</option>
                         <option value="01">Januari</option>
