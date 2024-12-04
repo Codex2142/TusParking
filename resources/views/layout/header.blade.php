@@ -50,7 +50,7 @@
 
                     <!-- User Icon and Name -->
                     <li class="nav-item me-3 d-flex align-items-center">
-                        <span id="username" class="text-white fw-semibold">{{ Auth::user()->username }}</span>
+                        <span id="username" class="text-white fw-semibold">{{ strtoupper(Auth::user()->username) }} | {{ strtoupper(Auth::user()->level) }}</span>
                     </li>
 
                     <!-- Dashboard Button -->
