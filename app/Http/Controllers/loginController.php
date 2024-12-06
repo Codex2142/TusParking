@@ -18,7 +18,7 @@ class LoginController extends Controller
             $request->session()->regenerate();
 
             if (Auth::user()->level === 'admin') {
-                return redirect()->intended('admin-dashboard');
+                return redirect()->intended('/');
             } else {
                 return redirect()->intended('/');
             }

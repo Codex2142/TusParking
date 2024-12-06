@@ -9,6 +9,16 @@
 </head>
 <body>
     @include('layout.header')
+
+    <nav class="d-flex navbar-light bg-light cstmr" style="position: sticky;">
+        <div class="container-fluid">
+            <!-- Tombol "Kembali" -->
+            <a href="{{ url('/admin-dashboard') }}" class="text-white btn btn-primary bg-dark" style="text-decoration: none;">
+                ← Kembali
+            </a>
+        </div>
+    </nav>
+
     @include('layout.sidebar')
     <div class="container">
         <div class="card" style="margin-left: 100px">

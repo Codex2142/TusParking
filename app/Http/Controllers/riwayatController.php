@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Parkiran;
+use Carbon\Carbon;
 use App\Models\Riwayat;
+use App\Models\Parkiran;
+use Illuminate\Http\Request;
 
 class RiwayatController extends Controller
 {
@@ -33,7 +34,7 @@ class RiwayatController extends Controller
                     'masuk' => $parkiran->masuk,
                     'nipkeluar' => $request->nipkeluar,
                     'nimkeluar' => $request->nimkeluar,
-                    'keluar' => now(),
+                    'keluar' => Carbon::now('Asia/Jakarta'),
                 ]);
                 Parkiran::where('plat', $parkiran->plat)->delete();
 

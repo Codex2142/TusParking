@@ -9,6 +9,16 @@
 </head>
 <body>
     @include('layout.header')
+
+    <nav class="d-flex navbar-light bg-light cstmr" style="position: sticky;">
+        <div class="container-fluid">
+            <!-- Tombol "Kembali" -->
+            <a href="{{ url('/') }}" class="text-white btn btn-primary bg-dark" style="text-decoration: none;">
+                ← Kembali
+            </a>
+        </div>
+    </nav>
+
     @include('layout.sidebar')
     <div class="container my-5">
         <div class="row justify-content-center">

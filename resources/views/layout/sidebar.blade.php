@@ -21,7 +21,8 @@
   <!-- Navbar -->
   <nav class="d-flex navbar-light bg-light cstmr" style="position: sticky;">
     <div class="container-fluid">
-      <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+      <button class="btn btn-primary bg-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu" style="margin-left:
+      7px">
         ☰ Menu
       </button>
     </div>

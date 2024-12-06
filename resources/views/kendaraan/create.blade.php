@@ -10,17 +10,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/yearpicker/1.1.0/yearpicker.css" />
 </head>
 <body>
-    <!-- Header -->
-    <div style="height: 60px; background-color: #343a40;">
-        @include('layout.header')
-    </div>
 
-    <div class="d-flex">
-        <!-- Sidebar -->
-        @include('layout.sidebar')
+
+        @include('layout.header')
+
+        <nav class="d-flex navbar-light bg-light cstmr" style="position: sticky;">
+            <div class="container-fluid">
+                <!-- Tombol "Kembali" -->
+                <a href="{{ url('/daftar-kendaraan') }}" class="text-white btn btn-primary bg-dark" style="text-decoration: none;">
+                    ← Kembali
+                </a>
+            </div>
+        </nav>
+
+         @include('layout.sidebar')
 
         <!-- Main Content -->
-        <div class="container-fluid" style="margin-left: 100px; padding-top: 70px;">
+        <div class="container-fluid" style="margin-left: 100px; padding-top: 40px;">
             <div class="card">
                 <div class="card-header">Tambahkan Kendaraan Baru</div>
                 @if (Session::has('fail'))
