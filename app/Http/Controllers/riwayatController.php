@@ -38,7 +38,7 @@ class RiwayatController extends Controller
                 ]);
                 Parkiran::where('plat', $parkiran->plat)->delete();
 
-                return redirect('/keluar')->with('success', 'Berhasil melakukan perubahan');
+                return redirect('/keluar')->with('success', 'Berhasil Keluar');
             } catch (\Exception $e) {
                 return redirect('/keluar')->with('fail', $e->getMessage());
             }
