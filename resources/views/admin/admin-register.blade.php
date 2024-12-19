@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
 </head>
 <body>
+        <nav class="d-flex navbar-light bg-light cstmr" style="position: sticky;">
+            <div class="container-fluid">
+                <!-- Tombol "Kembali" -->
+                <a href="{{ url('/login') }}" class="text-white btn btn-primary bg-dark" style="text-decoration: none;">
+                    ← Kembali
+                </a>
+            </div>
+        </nav>
     <div class="container mt-4">
         <div class="card">
             <div class="card-header">Registrasi Petugas</div>
