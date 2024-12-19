@@ -22,7 +22,7 @@
     @include('layout.header')
     @include('layout.sidebar')
 
-    <div class="container mt-6" style="margin-top: 0px;">
+    <div class="container" style="margin-top: 100px;">
         <div class="d-flex">
             <!-- Aside for Parking Table -->
             <aside>
